@@ -15,7 +15,7 @@ function Rendered:pad(width)
 	local text = vim.deepcopy(self.text)
 	local padding = 0
 	if self.longest < width and self.longest > 0 then
-		padding = math.ceil((width - self.longest))
+		padding = math.ceil((width - self.longest) / 2)
 	end
 	for lno, line in ipairs(text) do
 		text[lno] = string.rep(" ", padding) .. line
