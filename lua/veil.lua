@@ -239,8 +239,8 @@ function veil:display(replace)
 	self:redraw(true)
 
 	timer:start(
-		500,
-		500,
+		200,
+		200,
 		vim.schedule_wrap(function()
 			if self.state.open == false then
 				timer:stop()
@@ -308,9 +308,9 @@ function veil:redraw(init)
 			end
 			if #rest > 0 then
 				table.insert(virt, {
-					{ leading,                      "Normal" },
+					{ leading, "Normal" },
 					{ focused and sep.left or " ",  focused and section.focused_hl .. "Inv" or "Normal" },
-					{ rest,                         focused and section.focused_hl or section.hl },
+					{ rest, focused and section.focused_hl or section.hl },
 					{ focused and sep.right or " ", focused and section.focused_hl .. "Inv" or "Normal" },
 				})
 			else
